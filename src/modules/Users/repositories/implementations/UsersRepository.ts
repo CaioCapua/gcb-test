@@ -9,19 +9,19 @@ class UsersRepository implements IUsersRepository {
     constructor() {
         this.repository = getRepository(User)
     }
-
+    
     async create({ name, crm, tel, cel, cep, specialty }: IUserDTO): Promise<User> {
         const user = this.repository.create({
             name,
             crm,
             tel,
-            cel, 
-            cep, 
+            cel,
+            cep,
             specialty
         });
-
+        
         await this.repository.save(user)
-
+        
         return user
     }
 
@@ -38,16 +38,32 @@ class UsersRepository implements IUsersRepository {
     async list(): Promise<User[]> {
         return await this.repository.find()
     }
-
+    
     async delete(id: string): Promise<void> {
         await this.repository.delete(id)
     }
+    
+    async update(id: string, name: string, tel: number, cel: number): Promise<User> {
+        const user = await this.findById(id)
 
-    // async update(name: string, tel: number, cel: number ): Promise<void> {
-    //     // const userUpdate = await this.repository.save(user)
+        if(!user) {
+            throw new Error("User not exists");
+        }
 
-    //     return null
-    // }
+        const updateUser = Object.assign(user, {
+            name,
+            tel, 
+            cel
+        })
+
+        await this.repository.save(updateUser)
+
+        return updateUser
+    }
+    
+    async findByIdIndex(id: string): Promise<number> {
+        return null
+    }
 }
 
 export {UsersRepository}

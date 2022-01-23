@@ -1,4 +1,4 @@
-import { UsersRepository } from "../../repositories/implementations/UsersRepository"
+import { UsersRepository } from "../../../repositories/implementations/UsersRepository"
 import { DeleteUsersController } from "./DeleteUserController"
 import { DeleteUsersUseCase } from "./DeleteUserUseCase"
 

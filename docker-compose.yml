@@ -1,7 +1,7 @@
 version: "3.7"
 
 services:
-  database: #ESSE É O NOME DO SERVICE QUE DEVE ESTAR NO ARQUIVO DE CRIAÇÃO DE CONEXÃO
+  database: 
     image: postgres
     container_name: database_gcb_test
     restart: always

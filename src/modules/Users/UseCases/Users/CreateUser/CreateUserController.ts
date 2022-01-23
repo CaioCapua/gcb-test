@@ -7,7 +7,7 @@ class CreateUserController {
     
     async handle(request: Request, response: Response): Promise<Response> {
         try {
-            const {name, crm, tel, cel, cep, specialty} = request.body;
+            const {name, crm, tel, cel, cep, specialty} = request.body;            
 
             const user = await this.createUserUseCase.execute({name, crm, tel, cel, cep, specialty})
 

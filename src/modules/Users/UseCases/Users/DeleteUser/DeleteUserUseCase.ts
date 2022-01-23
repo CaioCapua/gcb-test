@@ -1,7 +1,7 @@
-import { UsersRepository } from "../../repositories/implementations/UsersRepository";
+import { IUsersRepository } from "../../../repositories/IUsersRepository";
 
 class DeleteUsersUseCase {
-    constructor(private usersRepository: UsersRepository) {}
+    constructor(private usersRepository: IUsersRepository) {}
 
     async execute(id: string): Promise<void> {
         const userExists = await this.usersRepository.findById(id)

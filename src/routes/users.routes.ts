@@ -1,7 +1,8 @@
 import { Router } from 'express';
-import createUserController from '../modules/Users/UseCases/CreateUser';
-import listUsersController from '../modules/Users/UseCases/ListUsers';
-import deleteUsersController from '../modules/Users/UseCases/DeleteUser';
+import createUserController from '../modules/Users/UseCases/Users/CreateUser';
+import listUsersController from '../modules/Users/UseCases/Users/ListUsers';
+import deleteUsersController from '../modules/Users/UseCases/Users/DeleteUser';
+import updateUsersController from '../modules/Users/UseCases/Users/UpdateUser';
 
 const usersRoutes = Router();
 
@@ -15,6 +16,10 @@ usersRoutes.get('/', (request, response) => {
 
 usersRoutes.delete('/:id', (request, response) => {
     return deleteUsersController().handle(request, response)
+})
+
+usersRoutes.put('/:id', (request, response) => {
+    return updateUsersController().handle(request, response)
 })
 
 export { usersRoutes }

@@ -1,0 +1,218 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "GCB CRUD - Documentation",
+        "description": "This is an API",
+        "version": "1.0.0",
+        "contact": {
+            "email": "caiocapua@hotmail.com"
+        }
+    },
+    "paths": {
+        "/users": {
+            "post": {
+                "tags": ["User"],
+                "summary": "Create a User",
+                "description": "Create a new user",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "tel": {
+                                        "type": "number"
+                                    },
+                                    "cel": {
+                                        "type": "number"
+                                    },
+                                    "crm": {
+                                        "type": "number"
+                                    },
+                                    "cep": {
+                                        "type": "number"
+                                    },
+                                    "specialty": {
+                                        "type": "array"
+                                    }
+                                },
+                                "example": {
+                                    "name": "user name sample",
+                                    "tel": 11111111,
+                                    "crm": 11111111,
+                                    "cel": 11111111,
+                                    "cep": 37704283,
+                                    "specialty": ["array sample", "array sample"]
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "Category already exists"
+                    }
+                }
+            },
+            "get": {
+                "tags": ["User"],
+                "summary": "List all users",
+                "description": "List all users",
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "string"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "tel": {
+                                                "type": "string"
+                                            },
+                                            "crm": {
+                                                "type": "number"
+                                            },
+                                            "cep": {
+                                                "type": "number"
+                                            },
+                                            "cel": {
+                                                "type": "number"
+                                            },
+                                            "specialty": {
+                                                "type": "string"
+                                            },
+                                            "created_at": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{id}": {
+            "delete": {
+                "description": "Delete a user",
+                "summary": "Delete a User",
+                "tags": ["User"],
+                "parameters": [{
+                    "name": "id",
+                    "in": "path",
+                    "description": "Id para busca do usuario",
+                    "required": true
+                }],
+                "responses": {
+                    "201": {
+                        "description": "Deleted"
+                    },
+                    "500": {
+                        "description": "User not exists"
+                    }
+                }
+            },
+            "put": {
+                "description": "Update a user",
+                "summary": "Update a User",
+                "tags": ["User"],
+                "parameters": [{
+                    "name": "id",
+                    "in": "path",
+                    "description": "Id para busca do usuario",
+                    "required": true
+                }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "tel": {
+                                        "type": "number"
+                                    },
+                                    "cel": {
+                                        "type": "number"
+                                    }
+                                },
+                                "example": {
+                                    "name": "updated user",
+                                    "tel": 11111111,
+                                    "cel": 11111111
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Deleted"
+                    },
+                    "500": {
+                        "description": "User not exists"
+                    }
+                }
+            }
+        },
+        "/specialties": {
+            "post": {
+                "tags": ["Specialty"],
+                "summary": "Create a Specialty",
+                "description": "Create a new specialty",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "name": "specialty name sample"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "Specialty already exists"
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+

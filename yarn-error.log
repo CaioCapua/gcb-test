@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\caioc\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @types/busca-cep
+  C:\Program Files\nodejs\node.exe C:\Users\caioc\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add swagger-ui-express
 
 PATH: 
   C:\Program Files\Eclipse Adoptium\jdk-11.0.13.8-hotspot\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\caioc\AppData\Local\Microsoft\WindowsApps;;C:\Users\caioc\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\caioc\AppData\Roaming\npm
@@ -14,17 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2fbusca-cep: Not found
-      at Request.params.callback [as _callback] (C:\Users\caioc\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:67029:18)
-      at Request.self.callback (C:\Users\caioc\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140883:22)
-      at Request.emit (node:events:390:28)
-      at Request.<anonymous> (C:\Users\caioc\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141855:10)
-      at Request.emit (node:events:390:28)
-      at IncomingMessage.<anonymous> (C:\Users\caioc\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141777:12)
-      at Object.onceWrapper (node:events:509:28)
-      at IncomingMessage.emit (node:events:402:35)
-      at endReadableNT (node:internal/streams/readable:1343:12)
-      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+  Error: EPERM: operation not permitted, unlink 'C:\Users\caioc\Documents\TesteBGC\node_modules\.bin\ts-node-dev'
 
 npm manifest: 
   {

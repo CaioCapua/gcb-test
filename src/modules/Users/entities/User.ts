@@ -21,11 +21,11 @@ class User {
     @Column()
     cep: number;
 
-    @Column()
-    specialty: string;
+    @Column( "text", {array: true, default: "{}" })
+    specialty: string[];
 
     @CreateDateColumn()
-    created_at: Date;
+    created_at?: Date;
 
     constructor(props: User) {
         Object.assign(this, props)
